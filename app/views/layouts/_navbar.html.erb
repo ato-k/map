@@ -5,13 +5,26 @@
       <button class="btn btn-outline-secondary" type="submit">🔍</button>
     </form>
   </li>
-  <li class="nav-item">
-    <%= link_to "ユーザ登録", new_user_path, class: "nav-link" %>
-  </li>
+
+  <% if logged_in? %>
   <li class="nav-item">
     <a class="nav-link" href="#">マイページ</a>
   </li>
   <li class="nav-item">
-    <a class="nav-link" href="#">ログアウト</a>
+    <%= link_to "ログアウト", logout_path, method: :delete, class: "nav-link" %>
   </li>
-</ul>
+
+  <% else %>
+  <li class="nav-item">
+    <%= link_to "ユーザ登録", new_user_path, class: "nav-link" %>
+  </li>
+  <li class="nav-item">
+    <%= link_to "ログイン", login_path, class: "nav-link" %>
+  </li>
+  <% end %>
+  
+  </ul>
+
+<aside class="text-end">
+  <button type="button" class="btn btn-outline-success">ルートを作成</button>
+</aside>

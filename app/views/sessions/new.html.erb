@@ -1,0 +1,16 @@
+<h1>ログイン</h1>
+
+<div class="text-center">
+    <%= form_for(:session, url: login_path) do |f| %>
+
+      <%= f.label :name %>
+      <%= f.text_field :name %>
+
+      <%= f.label :password %>
+      <%= f.password_field :password %>
+
+      <%= f.submit "ログイン", class: "btn btn-secondary" %>
+    <% end %>
+
+    <p><%= link_to "ユーザ登録をする", new_user_path %></p>
+</div>
