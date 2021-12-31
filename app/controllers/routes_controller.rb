@@ -39,7 +39,7 @@ class RoutesController < ApplicationController
   private
 
     def route_params
-      params.require(:route).permit(:name, :content0, :content1, :content2, :content3, :content4, :content5, :content6, :content7, :content8, :content9, images: [])
+      params.require(:route).permit(:name, :start, :content0, :content1, :content2, :content3, :content4, :content5, :content6, :content7, :content8, :content9, images: [])
     end
 
     def logged_in_user

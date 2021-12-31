@@ -1,51 +1,60 @@
-<%= @route.name %>
+<div class="text-center">
+<h2><%= @route.name %></h2>
+<div class="border rounded-pill p-3" style="display:inline-block;">出発地点：<%= @route.start %></div>
+</div>
 
-<%= @route.content0 %>
-<% unless @route.images[0].nil? %>
-<%= image_tag @route.images[0] %>
-<% end %>
+<div class="container w-50">
+  <div class="row">
 
-<%= @route.content1 %>
-<% unless @route.images[1].nil? %>
-<%= image_tag @route.images[1] %>
-<% end %>
+  <%= @route.content0 %>
+  <% unless @route.images[0].nil? %>
+  <%= image_tag @route.images[0] %>
+  <% end %>
 
-<%= @route.content2 %>
-<% unless @route.images[2].nil? %>
-<%= image_tag @route.images[2] %>
-<% end %>
+  <%= @route.content1 %>
+  <% unless @route.images[1].nil? %>
+  <%= image_tag @route.images[1] %>
+  <% end %>
 
-<%= @route.content3 %>
-<% unless @route.images[3].nil? %>
-<%= image_tag @route.images[3] %>
-<% end %>
+  <%= @route.content2 %>
+  <% unless @route.images[2].nil? %>
+  <%= image_tag @route.images[2] %>
+  <% end %>
 
-<%= @route.content4 %>
-<% unless @route.images[4].nil? %>
-<%= image_tag @route.images[4] %>
-<% end %>
+  <%= @route.content3 %>
+  <% unless @route.images[3].nil? %>
+  <%= image_tag @route.images[3] %>
+  <% end %>
 
-<%= @route.content5 %>
-<% unless @route.images[5].nil? %>
-<%= image_tag @route.images[5] %>
-<% end %>
+  <%= @route.content4 %>
+  <% unless @route.images[4].nil? %>
+  <%= image_tag @route.images[4] %>
+  <% end %>
 
-<%= @route.content6 %>
-<% unless @route.images[6].nil? %>
-<%= image_tag @route.images[6] %>
-<% end %>
+  <%= @route.content5 %>
+  <% unless @route.images[5].nil? %>
+  <%= image_tag @route.images[5] %>
+  <% end %>
 
-<%= @route.content7 %>
-<% unless @route.images[7].nil? %>
-<%= image_tag @route.images[7] %>
-<% end %>
+  <%= @route.content6 %>
+  <% unless @route.images[6].nil? %>
+  <%= image_tag @route.images[6] %>
+  <% end %>
 
-<%= @route.content8 %>
-<% unless @route.images[8].nil? %>
-<%= image_tag @route.images[8] %>
-<% end %>
+  <%= @route.content7 %>
+  <% unless @route.images[7].nil? %>
+  <%= image_tag @route.images[7] %>
+  <% end %>
 
-<%= @route.content9 %>
-<% unless @route.images[9].nil? %>
-<%= image_tag @route.images[9] %>
-<% end %>
+  <%= @route.content8 %>
+  <% unless @route.images[8].nil? %>
+  <%= image_tag @route.images[8] %>
+  <% end %>
+
+  <%= @route.content9 %>
+  <% unless @route.images[9].nil? %>
+  <%= image_tag @route.images[9] %>
+  <% end %>
+
+  </div>
+</div>
