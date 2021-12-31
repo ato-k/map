@@ -1,9 +1,7 @@
+<div class="text-center">
 <h1>ルート一覧</h1>
 
-<ul>
-  <% @routes.each do |r| %>
-    <li>
-      <%= link_to r.name, r %>
-    </li>
-  <% end %>
-</ul>
+<% @routes.each do |r| %>
+  <%= link_to r.name, root_path %>
+<% end %>
+</div>
