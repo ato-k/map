@@ -1,4 +1,5 @@
 class Route < ApplicationRecord
   validates :name,  presence: true, length: { maximum: 50 }, uniqueness: true
-  validates :content, presence: true
+  
+  has_many_attached :images
 end
