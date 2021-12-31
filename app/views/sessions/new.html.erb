@@ -1,6 +1,5 @@
-<h1>ログイン</h1>
-
 <div class="text-center">
+<h1>ログイン</h1>
     <%= form_for(:session, url: login_path) do |f| %>
 
       <%= f.label :name %>
@@ -8,6 +7,11 @@
 
       <%= f.label :password %>
       <%= f.password_field :password %>
+
+      <%= f.label :remember_me, class: "checkbox inline" do %>
+        <%= f.check_box :remember_me %>
+        <span>ログイン情報を保存する</span>
+      <% end %>
 
       <%= f.submit "ログイン", class: "btn btn-secondary" %>
     <% end %>
