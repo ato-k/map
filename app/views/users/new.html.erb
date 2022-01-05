@@ -2,19 +2,29 @@
 <h1>ユーザ新規登録</h1>
 
 <%= form_for(@user) do |f| %>
+  <div class="form-group">
   <%= f.label :name %>
   <%= f.text_field :name %>
+  </div>
 
+  <div class="form-group">
   <%= f.label :email %>
   <%= f.email_field :email %>
+  </div>
 
+  <div class="form-group">
   <%= f.label :password, "パスワード" %>
-  <p>※8文字以上を入力してください。</p>
   <%= f.password_field :password %>
+  <p>※8文字以上を入力してください。</p>
+  </div>
 
+  <div class="form-group">
   <%= f.label :password_confirmation, "パスワード(確認用)" %>
   <%= f.password_field :password_confirmation %>
+  </div>
 
+  <div class="form-group">
   <%= f.submit "作成", class: "btn btn-secondary" %>
+  </div>
 <% end %>
 </div>
