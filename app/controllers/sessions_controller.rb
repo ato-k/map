@@ -6,9 +6,16 @@ class SessionsController < ApplicationController
   def create
     user = User.find_by(name: params[:session][:name])
     if user && user.authenticate(params[:session][:password])
-      log_in user
-      params[:session][:remember_me] == '1' ? remember(user) : forget(user)
-      redirect_to root_path
+      if user.activated?
+        log_in user
+        params[:session][:remember_me] == '1' ? remember(user) : forget(user)
+        redirect_back_or root_path
+      else
+        message  = "Account not activated. "
+        message += "Check your email for the activation link."
+        flash[:warning] = message
+        redirect_to root_url
+      end
     else
       flash.now[:alert] = "nameまたはpasswordが違います。"
       render 'new'
@@ -16,8 +23,7 @@ class SessionsController < ApplicationController
   end
 
   def destroy
-    forget(current_user)
-    session[:user_id] = nil
+    log_out if logged_in?
     redirect_to root_path
   end
 end

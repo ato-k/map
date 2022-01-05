@@ -42,11 +42,4 @@ class RoutesController < ApplicationController
       params.require(:route).permit(:name, :start, :content0, :content1, :content2, :content3, :content4, :content5, :content6, :content7, :content8, :content9, images: [])
     end
 
-    def logged_in_user
-      unless logged_in?
-        flash[:danger] = "ログインしてください"
-        redirect_to login_url
-      end
-    end
-
 end

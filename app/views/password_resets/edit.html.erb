@@ -1,0 +1,14 @@
+<h1>パスワード再発行</h1>
+
+    <%= form_for(@user, url: password_reset_path(params[:id])) do |f| %>
+
+      <%= hidden_field_tag :email, @user.email %>
+
+      <%= f.label :password %>
+      <%= f.password_field :password %>
+
+      <%= f.label :password_confirmation, "Confirmation" %>
+      <%= f.password_field :password_confirmation %>
+
+      <%= f.submit "Update password", class: "btn btn-secondary" %>
+    <% end %>
