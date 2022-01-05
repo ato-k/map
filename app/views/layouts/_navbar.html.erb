@@ -1,30 +1,33 @@
-<ul class="nav justify-content-end">
-  <li>
-    <form class="nav-item d-flex">
-      <input class="form-control me-2" type="search" placeholder="目的地を検索" aria-label="Search">
-      <button class="btn btn-outline-secondary" type="submit">🔍</button>
-    </form>
-  </li>
+<nav class="navbar navbar-light bg-light">
+  <a class="navbar-brand" href="/">chika route</a>
+      
+  <ul class="nav justify-content-end">
+    <li>
+      <form class="nav-item d-flex">
+        <input class="form-control me-2" type="search" placeholder="目的地を検索" aria-label="Search">
+        <button class="btn btn-outline-secondary" type="submit">🔍</button>
+      </form>
+    </li>
 
-  <% if logged_in? %>
-  <li class="nav-item">
-    <%= link_to "マイページ", user_path(current_user), class: "nav-link" %>
-  </li>
-  <li class="nav-item">
-    <%= link_to "ログアウト", logout_path, method: :delete, class: "nav-link" %>
-  </li>
+    <% if logged_in? %>
+    <li class="nav-item">
+      <%= link_to "マイページ", user_path(current_user), class: "nav-link" %>
+    </li>
+    <li class="nav-item">
+      <%= link_to "ログアウト", logout_path, method: :delete, class: "nav-link" %>
+    </li>
 
-  <% else %>
-  <li class="nav-item">
-    <%= link_to "ユーザ登録", new_user_path, class: "nav-link" %>
-  </li>
-  <li class="nav-item">
-    <%= link_to "ログイン", login_path, class: "nav-link" %>
-  </li>
-  <% end %>
-  
+    <% else %>
+    <li class="nav-item">
+      <%= link_to "ユーザ登録", new_user_path, class: "nav-link" %>
+    </li>
+    <li class="nav-item">
+      <%= link_to "ログイン", login_path, class: "nav-link" %>
+    </li>
+    <% end %>
+        
   </ul>
-
+</nav>  
 <aside class="text-end">
   <%= link_to "ルートを作成", new_route_path, class: "btn btn-outline-success" %>
 </aside>

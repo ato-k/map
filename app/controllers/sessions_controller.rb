@@ -1,4 +1,5 @@
 class SessionsController < ApplicationController
+  #protect_from_forgery :except => [:destroy]
   
   def new
   end
@@ -10,6 +11,7 @@ class SessionsController < ApplicationController
         log_in user
         params[:session][:remember_me] == '1' ? remember(user) : forget(user)
         redirect_back_or root_path
+        #redirect_to request.referrer(ログイン画面に戻っちゃう)
       else
         message  = "Account not activated. "
         message += "Check your email for the activation link."
