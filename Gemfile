@@ -8,6 +8,7 @@ gem 'rails', '~> 6.1.4', '>= 6.1.4.1'
 
 gem 'bootstrap', '~> 5.1.3'
 gem 'jquery-rails'
+gem 'aws-sdk-s3', require: false
 
 # Use Puma as the app server
 gem 'puma', '~> 5.0'
