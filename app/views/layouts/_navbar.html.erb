@@ -2,11 +2,14 @@
   <a class="navbar-brand" href="/">chika route</a>
       
   <ul class="nav justify-content-end">
+
     <li>
-      <form class="nav-item d-flex">
-        <input class="form-control me-2" type="search" placeholder="目的地を検索" aria-label="Search">
-        <button class="btn btn-outline-secondary" type="submit">🔍</button>
-      </form>
+    <%= form_with url: search_path, method: :get, local: true do |f| %>
+      <div class="d-flex">
+      <%= f.text_field :keyword, value: $keyword, class: "form-control me-2", placeholder: "目的地を検索" %>
+      <%= f.submit "🔍", class: "btn btn-outline-secondary" %>
+      </div>
+    <% end %>
     </li>
 
     <% if logged_in? %>

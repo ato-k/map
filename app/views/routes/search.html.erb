@@ -1,0 +1,21 @@
+<div class="text-center">
+  <div class="container w-50">
+    <ul class="list-group list-group-flush">
+    
+      <div class="pagination justify-content-center">
+      <%= will_paginate previous_label: '&lt', next_label: '&gt' %>
+      </div>
+
+      <% if @routes.exists? %>
+        <% @routes.each do |r| %>
+          <li class="list-group-item">
+            <%= link_to r.name, r %>
+            <%= r.start %>から
+          </li>
+        <% end %>
+      <% else %>
+        <p>検索結果はありませんでした。</p>
+      <% end %>
+    </ul>
+  </div>
+</div>

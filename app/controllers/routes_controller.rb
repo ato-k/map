@@ -2,7 +2,6 @@ class RoutesController < ApplicationController
   before_action :logged_in_user, only: [:new, :create, :edit, :update]
 
   def top
-
   end
 
   def index
@@ -49,6 +48,17 @@ class RoutesController < ApplicationController
       @route = Route.find(params[:id])
       @route.destroy
       redirect_to root_url, notice: "削除されました。"
+    end
+  end
+
+  def search
+    $keyword = params[:keyword]
+    if $keyword.present?
+      @routes = Route.search(params[:keyword]).paginate(page: params[:page], :per_page => 10)
+      render "search"
+      $keyword = nil
+    else
+      redirect_to root_url
     end
   end
 

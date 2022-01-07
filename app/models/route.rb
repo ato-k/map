@@ -5,4 +5,8 @@ class Route < ApplicationRecord
   validates :user_id, presence: true
   
   has_many_attached :images
+
+  def self.search(keyword)
+    where(["name like? OR start like?", "%#{keyword}%", "%#{keyword}%"])
+  end
 end
