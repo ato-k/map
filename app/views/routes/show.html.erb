@@ -15,47 +15,47 @@
 <div class="container w-50">
   <div class="row">
   
-    <%= @route.content1 %>
+    <%= safe_join(@route.content1.split("\n"),tag(:br)) %>
     <% unless @route.images[1].nil? %>
     <%= image_tag @route.images[1] %>
     <% end %>
   
-    <%= @route.content2 %>
+    <%= safe_join(@route.content2.split("\n"),tag(:br)) %>
     <% unless @route.images[2].nil? %>
     <%= image_tag @route.images[2] %>
     <% end %>
   
-    <%= @route.content3 %>
+    <%= safe_join(@route.content3.split("\n"),tag(:br)) %>
     <% unless @route.images[3].nil? %>
     <%= image_tag @route.images[3] %>
     <% end %>
   
-    <%= @route.content4 %>
+    <%= safe_join(@route.content4.split("\n"),tag(:br)) %>
     <% unless @route.images[4].nil? %>
     <%= image_tag @route.images[4] %>
     <% end %>
   
-    <%= @route.content5 %>
+    <%= safe_join(@route.content5.split("\n"),tag(:br)) %>
     <% unless @route.images[5].nil? %>
     <%= image_tag @route.images[5] %>
     <% end %>
   
-    <%= @route.content6 %>
+    <%= safe_join(@route.content6.split("\n"),tag(:br)) %>
     <% unless @route.images[6].nil? %>
     <%= image_tag @route.images[6] %>
     <% end %>
   
-    <%= @route.content7 %>
+    <%= safe_join(@route.content7.split("\n"),tag(:br)) %>
     <% unless @route.images[7].nil? %>
     <%= image_tag @route.images[7] %>
     <% end %>
   
-    <%= @route.content8 %>
+    <%= safe_join(@route.content8.split("\n"),tag(:br)) %>
     <% unless @route.images[8].nil? %>
     <%= image_tag @route.images[8] %>
     <% end %>
   
-    <%= @route.content9 %>
+    <%= safe_join(@route.content9.split("\n"),tag(:br)) %>
     <% unless @route.images[9].nil? %>
     <%= image_tag @route.images[9] %>
     <% end %>
