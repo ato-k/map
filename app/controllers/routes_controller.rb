@@ -34,9 +34,22 @@ class RoutesController < ApplicationController
   end
 
   def destroy
-    @route = Route.find(params[:id])
-    @route.destroy
-    redirect_to root_url, notice: "削除されました。"
+    if Rails.env.production?
+      @route = Route.find(params[:id])
+      if @route.images.exists?
+        @route.images.purge
+        @route.destroy
+        redirect_to root_url, notice: "削除されました。"
+      else
+        @route.destroy
+        redirect_to root_url, notice: "削除されました。"
+      end
+  
+    else
+      @route = Route.find(params[:id])
+      @route.destroy
+      redirect_to root_url, notice: "削除されました。"
+    end
   end
 
   private
