@@ -4,9 +4,26 @@
   <div class="text-center">
     <p><strong>Name:</strong><%= @user.name %></p>
     <p><strong>Email:</strong><%= @user.email %></p>
-    if current_user.投稿
-    <p>投稿したルート一覧</p>
-    end
+
+    <% if current_user.routes.exists? %>
+      <strong><投稿したルート一覧></strong>
+      <div class="text-center">
+        <div class="container w-50">
+          <ul class="list-group list-group-flush">
+            <% @routes.each do |r| %>
+              <li class="list-group-item">
+                <%= link_to r.name, r %>
+                <%= r.start %>から
+              </li>
+            <% end %>
+          </ul>
+        </div>
+      </div>
+      
+      <div class="pagination justify-content-center">
+        <%= will_paginate @routes, previous_label: '&lt', next_label: '&gt' %>
+      </div>
+    <% end %>
     
     <div class="text-end">
       <%= button_to "ユーザ情報を編集する", edit_user_path, method: :get, class: "btn btn-secondary" %><br>
