@@ -1,7 +1,17 @@
 <div class="text-center">
-<h1>ルート一覧</h1>
+  <div class="container w-50">
+    <ul class="list-group list-group-flush">
+    
+      <div class="pagination justify-content-center">
+      <%= will_paginate previous_label: '&lt', next_label: '&gt' %>
+      </div>
 
-<% @routes.each do |r| %>
-  <%= link_to r.name, r %>
-<% end %>
+      <% @routes.each do |r| %>
+        <li class="list-group-item">
+          <%= link_to r.name, r %>
+          <%= r.start %>から
+        </li>
+      <% end %>
+    </ul>
+  </div>
 </div>

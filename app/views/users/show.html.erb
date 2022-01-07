@@ -1,3 +1,16 @@
-<br><%= @user.name %>, <%= @user.email %>
-
-<%= button_to "ユーザを削除する", current_user, method: :delete, data: { confirm: '削除してもよろしいですか?'} %>
+<div class="container">
+  <h2>ユーザ情報</h2>
+  
+  <div class="text-center">
+    <p><strong>Name:</strong><%= @user.name %></p>
+    <p><strong>Email:</strong><%= @user.email %></p>
+    if current_user.投稿
+    <p>投稿したルート一覧</p>
+    end
+    
+    <div class="text-end">
+      <%= button_to "ユーザ情報を編集する", edit_user_path, method: :get, class: "btn btn-secondary" %><br>
+      <%= button_to "ユーザを削除する", current_user, method: :delete, class: "btn btn-warning", data: { confirm: '削除してもよろしいですか?'} %>
+    </div>
+  </div>
+</div>

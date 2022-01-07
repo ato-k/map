@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_01_04_035042) do
+ActiveRecord::Schema.define(version: 2022_01_07_084607) do
 
   create_table "active_storage_attachments", force: :cascade do |t|
     t.string "name", null: false
@@ -55,6 +55,9 @@ ActiveRecord::Schema.define(version: 2022_01_04_035042) do
     t.text "content8"
     t.text "content9"
     t.string "start"
+    t.integer "user_id"
+    t.index ["user_id", "created_at"], name: "index_routes_on_user_id_and_created_at"
+    t.index ["user_id"], name: "index_routes_on_user_id"
   end
 
   create_table "users", force: :cascade do |t|
@@ -73,4 +76,5 @@ ActiveRecord::Schema.define(version: 2022_01_04_035042) do
 
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
   add_foreign_key "active_storage_variant_records", "active_storage_blobs", column: "blob_id"
+  add_foreign_key "routes", "users"
 end

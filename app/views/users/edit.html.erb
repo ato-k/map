@@ -1,19 +1,32 @@
-<div class="text-center">
-<h1>ユーザ編集</h1>
-
-<%= form_for(@user) do |f| %>
-    <%= f.label :name %>
-    <%= f.text_field :name %>
+<div class="container">
+  <h2>ユーザ編集</h2>
   
-    <%= f.label :email %>
-    <%= f.email_field :email %>
+  <div class="text-center">
+    <%= form_for(@user) do |f| %>
+      <div class="form-group">
+      <%= f.label :name %>
+      <%= f.text_field :name %>
+      </div>
+    
+      <div class="form-group">
+      <%= f.label :email %>
+      <%= f.email_field :email %>
+      </div>
   
-    <%= f.label :password, "パスワード" %>
-    <%= f.password_field :password %>
+      <div class="form-group">
+      <%= f.label :password, "パスワード" %>
+      <%= f.password_field :password %>
+      </div>
   
-    <%= f.label :password_confirmation, "パスワード(確認用)" %>
-    <%= f.password_field :password_confirmation %>
-  
-    <%= f.submit "保存", class: "btn-secondary" %>
-<% end %>
+      <div class="form-group">
+      <%= f.label :password_confirmation, "パスワード(確認用)" %>
+      <%= f.password_field :password_confirmation %>
+      </div>
+      
+      <div class="form-group">
+      <%= f.submit "保存", class: "btn-secondary" %>
+      </div>
+      <%= link_to "保存せずに戻る", :back %>
+    <% end %>
+  </div>
 </div>

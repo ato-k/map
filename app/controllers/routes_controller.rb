@@ -6,7 +6,7 @@ class RoutesController < ApplicationController
   end
 
   def index
-    @routes = Route.all
+    @routes = Route.paginate(page: params[:page], :per_page => 10)
   end
 
   def show
@@ -18,7 +18,7 @@ class RoutesController < ApplicationController
   end
 
   def create
-    @route = Route.new(route_params)
+    @route = current_user.routes.new(route_params)
     if @route.save
       redirect_to @route
     else
@@ -34,6 +34,9 @@ class RoutesController < ApplicationController
   end
 
   def destroy
+    @route = Route.find(params[:id])
+    @route.destroy
+    redirect_to root_url, notice: "削除されました。"
   end
 
   private
