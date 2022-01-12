@@ -9,7 +9,7 @@
       <% if @routes.exists? %>
         <% @routes.each do |r| %>
           <li class="list-group-item">
-            <%= link_to r.name, r %>
+            <%= link_to r.name, r, style: "text-decoration: none;" %>
             <%= r.start %>から
           </li>
         <% end %>

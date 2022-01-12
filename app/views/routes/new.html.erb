@@ -3,6 +3,7 @@
   
   <div class="text-center">
     <%= form_for(@route) do |f| %>
+      <%= render 'shared/error_messages', model: @route %>
       <div class="form-group">
       <strong><%= f.label :name, "Title:" %></strong>
       <%= f.text_field :name %>

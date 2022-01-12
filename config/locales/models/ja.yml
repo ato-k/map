@@ -1,0 +1,14 @@
+ja:
+  activerecord:
+    models:
+      route: ルート
+    attributes:
+      route:
+        name: このTitle
+        start: 出発地点
+    models:
+      user: ユーザ
+    attributes:
+      user:
+        name: このName
+        email: このメールアドレス

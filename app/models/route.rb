@@ -7,6 +7,10 @@ class Route < ApplicationRecord
   has_many_attached :images
 
   def self.search(keyword)
-    where(["name like? OR start like?", "%#{keyword}%", "%#{keyword}%"])
+    if Rails.env.production?
+      where(["name ilike? OR start ilike?", "%#{keyword}%", "%#{keyword}%"])
+    else
+      where(["name like? OR start like?", "%#{keyword}%", "%#{keyword}%"])
+    end
   end
 end

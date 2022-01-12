@@ -1,9 +1,12 @@
-<h1>Sample App</h1>
+<p><%= @user.name %>様</p>
 
-<p>Hi <%= @user.name %>,</p>
-
-<p>
-Welcome to the Sample App! Click on the link below to activate your account:
-</p>
-
-<%= link_to "Activate", edit_account_activation_url(@user.activation_token, email: @user.email) %>
+<p>以下のリンクを開き、ユーザ登録を完了させてください。</p>
+<%= link_to "ユーザ登録を完了する", edit_account_activation_url(@user.activation_token, email: @user.email) %>
+<br>
+<br>
+<p>※ご本人様以外がアクセスされませんようご注意ください。</p>
+<p>---------------</p>
+<p>◎本メールは送信専用メールアドレスから配信しております。ご返信いただいてもお答えできませんのでご了承ください。</p>
+<p>◎本メールにお心あたりがない場合は、恐れ入りますが破棄いただけますようお願いいたします。</p>
+<p>---------------</p>
+<p>発行:chika route</p>

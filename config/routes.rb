@@ -1,5 +1,8 @@
 Rails.application.routes.draw do
   root "routes#top"
+
+  get '/routes/search',  to: 'routes#search'
+
   resources :routes
   resources :users, except: [:index]
   get    '/login',   to: 'sessions#new'
@@ -8,5 +11,4 @@ Rails.application.routes.draw do
   resources :account_activations, only: [:edit]
   resources :password_resets,     only: [:new, :create, :edit, :update]
 
-  get '/search',  to: 'routes#search'
 end

@@ -21,7 +21,6 @@ class RoutesController < ApplicationController
     if @route.save
       redirect_to @route
     else
-      flash.now[:alert] = 'やり直し'
       render 'new'
     end
   end

@@ -1,5 +1,11 @@
-Hi <%= @user.name %>,
+<%= @user.name %>様
 
-Welcome to the Sample App! Click on the link below to activate your account:
-
+以下のリンクを開き、ユーザ登録を完了させてください。
 <%= edit_account_activation_url(@user.activation_token, email: @user.email) %>
+
+※ご本人様以外がアクセスされませんようご注意ください。
+---------------
+◎本メールは送信専用メールアドレスから配信しております。ご返信いただいてもお答えできませんのでご了承ください。
+◎本メールにお心あたりがない場合は、恐れ入りますが破棄いただけますようお願いいたします。
+---------------
+発行:chika route

@@ -18,8 +18,10 @@ class ApplicationController < ActionController::Base
     end
 
     def route_make_user?
-      @route = Route.find(params[:id])
-      current_user.id == @route.user_id
+      if logged_in?
+        @route = Route.find(params[:id])
+        current_user.id == @route.user_id
+      end
     end
 
 end

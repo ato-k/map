@@ -4,7 +4,7 @@
   <ul class="nav justify-content-end">
 
     <li>
-    <%= form_with url: search_path, method: :get, local: true do |f| %>
+    <%= form_with url: routes_search_path, method: :get, local: true do |f| %>
       <div class="d-flex">
       <%= f.text_field :keyword, value: $keyword, class: "form-control me-2", placeholder: "目的地を検索" %>
       <%= f.submit "🔍", class: "btn btn-outline-secondary" %>

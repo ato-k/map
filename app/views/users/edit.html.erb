@@ -4,29 +4,31 @@
   <div class="text-center">
     <%= form_for(@user) do |f| %>
       <div class="form-group">
-      <%= f.label :name %>
+      <%= f.label :name, "Name" %>
       <%= f.text_field :name %>
       </div>
     
-      <div class="form-group">
-      <%= f.label :email %>
+      <div class="form-group mt-2">
+      <%= f.label :email, "Email" %>
       <%= f.email_field :email %>
       </div>
   
-      <div class="form-group">
+      <div class="form-group mt-2">
       <%= f.label :password, "パスワード" %>
       <%= f.password_field :password %>
       </div>
   
-      <div class="form-group">
+      <div class="form-group mt-2">
       <%= f.label :password_confirmation, "パスワード(確認用)" %>
       <%= f.password_field :password_confirmation %>
       </div>
       
-      <div class="form-group">
+      <div class="form-group mt-3">
       <%= f.submit "保存", class: "btn-secondary" %>
       </div>
+      <div class="mt-5 mb-5">
       <%= link_to "保存せずに戻る", :back %>
+      </div>
     <% end %>
   </div>
 </div>
