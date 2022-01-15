@@ -4,7 +4,7 @@
 </div>
 
 <div class="container w-25">
-  <div class="row">
+  <div class="row" style="align-items: flex-start;">
     <%= @route.content0 %>
     <% unless @route.images[0].nil? %>
     <%= image_tag @route.images[0] %>
@@ -13,7 +13,7 @@
 </div>
 
 <div class="container w-50">
-  <div class="row">
+  <div class="row" style="align-items: flex-start;">
   
     <%= safe_join(@route.content1.split("\n"),tag(:br)) %>
     <% unless @route.images[1].nil? %>
