@@ -12,6 +12,7 @@ gem 'aws-sdk-s3', require: false
 gem 'will_paginate',           '3.3.1'
 gem 'will_paginate-bootstrap4'
 gem 'rails-i18n'
+gem 'impressionist'
 
 # Use Puma as the app server
 gem 'puma', '~> 5.0'

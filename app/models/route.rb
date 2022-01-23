@@ -6,6 +6,8 @@ class Route < ApplicationRecord
   
   has_many_attached :images
 
+  is_impressionable counter_cache: true
+
   def self.search(keyword)
     if Rails.env.production?
       where(["name ilike? OR start ilike?", "%#{keyword}%", "%#{keyword}%"])

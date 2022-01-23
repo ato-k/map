@@ -10,6 +10,7 @@ class RoutesController < ApplicationController
 
   def show
     @route = Route.find(params[:id])
+    impressionist(@route, nil, unique: [:ip_address])
   end
 
   def new
