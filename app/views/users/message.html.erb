@@ -1,0 +1,17 @@
+<div class="container w-50">
+  <% if @messages.present? %>
+    <% @messages.each do |message| %>
+      <div><%= message.user.name %>：<%= message.content %></div>
+      <hr>
+    <% end %>
+  <% end %>
+  <%= form_with url: "/message", local: true do |f| %>
+    <%= f.hidden_field :user_id, value: current_user.id %>
+    <div class="form-group">
+      <textarea name="content" class="form-control"></textarea>
+    </div>
+    <div class="text-center">
+    <%= f.submit "送信", class: "btn btn-secondary" %>
+    </div>
+  <% end %>
+</div>

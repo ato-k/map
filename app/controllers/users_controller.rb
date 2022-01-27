@@ -41,10 +41,25 @@ class UsersController < ApplicationController
     redirect_to root_path
   end
 
+  def message
+    @message = Message.new
+    @messages = current_user.messages.all
+  end
+
+  def message_create
+    @message = Message.new(message_params)
+    @message.save
+    redirect_to request.referrer
+  end
+
   private
 
     def user_params
       params.require(:user).permit(:name, :email, :password, :password_confirmation)
+    end
+
+    def message_params
+      params.permit(:user_id, :content)
     end
     
 end

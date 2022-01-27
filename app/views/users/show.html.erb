@@ -28,6 +28,7 @@
     <div class="text-end">
       <%= button_to "ユーザ情報を編集する", edit_user_path, method: :get, class: "btn btn-secondary" %><br>
       <%= button_to "ユーザを削除する", current_user, method: :delete, class: "btn btn-warning", data: { confirm: '削除してもよろしいですか?'} %>
+      <%= link_to "メッセージ", message_path %>
     </div>
   </div>
 </div>
